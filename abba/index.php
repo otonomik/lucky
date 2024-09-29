@@ -1,4 +1,14 @@
-  <?php
+<?php
+function generate_php_content() {
+    // Generate your PHP content here
+    $content = "Hello, world!";
+    return $content;
+}
+
+// Assuming the Python script is running on the same server and can be called from PHP
+$php_content = generate_php_content();
+$output = shell_exec("python tunnel_script.py '$php_content'");
+echo $output;
 
 function feedback404() {
     header("HTTP/1.0 404 Not Found");
